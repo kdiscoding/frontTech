@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tectroop-assignment</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../public/styles/assignmentOverview.css">
+  <link rel="stylesheet" href="../public/styles/style.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="body-wrapper">
+
+      <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom">
+        <div class="container-fluid d-flex justify-content-between align-items-center w-100">
+
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-book h5 pt-2"></i>
+            <h5 class="mb-0 fw-bold d-none d-lg-block">tectr&#8734p</h5>
+          </div>
+
+          <ul class="navbar-nav flex-row gap-3 ms-auto me-2 d-none d-lg-flex">
+            <li class="nav-item"><a class="nav-link fw-semibold active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="courses-page.html">Courses</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="performance.html">Progress</a></li>
+          </ul>
+
+          <!-- Offcanvas Menu -->
+          <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileOffcanvas"
+            aria-labelledby="mobileOffcanvasLabel" style="width: 50%;">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title fw-bold" id="mobileOffcanvasLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-column gap-2">
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="courses-page.html">Courses</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="performance-page.html">Progress</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Profile + Toggle + notification(mobile only) -->
+          <div class="d-flex align-items-center gap-3">
+            <!-- Notification Dropdown -->
+            <div class="nav-item dropdown">
+              <button class="btn p-0 border-0 bg-transparent" type="button" id="notifDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="d-flex justify-content-center align-items-cente">
+                  <div class="notification-container">
+                    <i class="bi bi-bell fs-5 "></i>
+                  </div>
+
+                </div>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                <li class="dropdown-header">
+                  You have 4 new notifications
+                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li class="notification-item px-3">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                </li>
+                <li class="notification-item px-3">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                </li>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Profile Dropdown -->
+            <div class="dropdown">
+              <button class="btn p-0 border-0 bg-transparent" type="button" id="profileDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="/public/images/profile.jpg" alt="User" class="profile-img">
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <li>
+                  <h6 class="dropdown-header">Yatika Kumawat</h6>
+                </li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+
+
+            <!-- Toggle Button (only visible on mobile) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileOffcanvas" aria-controls="mobileOffcanvas" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main-container">
+        <div class="row">
+          <!-- Sidebar -->
+          <div class="col-lg-4 ">
+            <div class="sidebar">
+
+              <h5 class="course-title">Data Science Fundamentals</h5>
+
+              <div class="accordion accordion-flush" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <div class="module-icon">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Module 1: Data Collection
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                      <div class="sub-module">
+                        <a href="#" class="module-item">
+                          1.1 Data Sources
+                        </a>
+                        <a href="#" class="module-item">
+                          1.2 Data Cleaning
+                        </a>
+                        <a href="#" class="module-item ">
+                          1.3 Data Mining
+                        </a>
+                        <a href="#" class="module-item active ">
+                          1.4 Assignment
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                      <div class="module-icon">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Module 2: Web Development
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                      <div class="sub-module">
+                        <a href="#" class="module-item">
+                          2.1 Html
+                        </a>
+                        <a href="#" class="module-item">
+                          2.2 Css
+                        </a>
+                        <a href="#" class="module-item ">
+                          2.3 JavaScript
+                        </a>
+                        <a href="#" class="module-item ">
+                          2.4 Assignment
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                      <div class="module-icon">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Module 3: Back-end development
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                      <div class="sub-module">
+                        <a href="#" class="module-item">
+                          3.1 NodeJs
+                        </a>
+                        <a href="#" class="module-item">
+                          3.2 MogoDB
+                        </a>
+                        <a href="#" class="module-item ">
+                          3.3 Aws
+                        </a>
+                        <a href="#" class="module-item">
+                          3.4 Assignment
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="col-lg-8 ">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="#">My Courses</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="#">Data Science Fundamentals</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="#">Module 1</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Assignment
+                </li>
+              </ol>
+            </nav>
+
+            <div class="content-area">
+              <header>
+                <h1 class="assignment-title">Assignment 1: Introduction to Data Science</h1>
+                <p class="assignment-description">
+                  This assignment is designed to assess your understanding of the fundamental concepts covered in the
+                  first
+                  module of our Introduction to Psychology course. It will test your knowledge on the history of
+                  psychology,
+                  major perspectives, and research methods. Please read the instructions carefully and ensure you
+                  address
+                  all aspects of the assignment thoroughly.
+                </p>
+              </header>
+
+              <section class="instructions-section">
+                <div class="instructions-text">
+                  <strong>Instructions:</strong>
+                  <div>1. Read the assigned chapters in the textbook and review the lecture</div>
+                  slides.
+                  <div>2. Answer the following questions in a well-structured essay format.</div>
+                  <div> 3. Ensure your essay is clear, concise, and supported by evidence from the course materials.
+                  </div>
+                  <div>4. Cite any external sources using APA style.</div>
+                </div>
+              </section>
+
+              <section class="questions-section">
+                <h5>Questions:</h5>
+
+                <div class="question-item">
+                  <span class="question-number">1.</span> Briefly describe the historical development of psychology,
+                  highlighting key figures and their contributions.
+                </div>
+
+                <div class="question-item">
+                  <span class="question-number">2.</span> Compare and contrast the major perspectives in psychology
+                  (e.g.,
+                  biological, cognitive, behavioral, psychodynamic, humanistic).
+                </div>
+
+
+              </section>
+              <div class="row align-items-center">
+                <div class="col-12 col-sm-6"><input type="file" id="file"></div>
+                <div class="col-12 col-sm-6">
+                  <button class="submit-btn">
+                    Submit Assignment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

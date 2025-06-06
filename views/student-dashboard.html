@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-boxed-layout="boxed" data-card="shadow">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tectroop</title>
+  <!-- bootstrap-5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- google icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../public/styles/style.css">
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+    <div class="body-wrapper">
+      <!-- Header Start -->
+      <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom">
+        <div class="container-fluid d-flex justify-content-between align-items-center w-100">
+
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-book h5 pt-2"></i>
+            <h5 class="mb-0 fw-bold d-none d-lg-block">tectr&#8734p</h5>
+          </div>
+
+          <ul class="navbar-nav flex-row gap-3 ms-auto me-2 d-none d-lg-flex">
+            <li class="nav-item"><a class="nav-link fw-semibold active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="courses-page.html">Courses</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="performance.html">Progress</a></li>
+          </ul>
+
+          <!-- Offcanvas Menu -->
+          <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileOffcanvas"
+            aria-labelledby="mobileOffcanvasLabel" style="width: 50%;">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title fw-bold" id="mobileOffcanvasLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-column gap-2">
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="courses-page.html">Courses</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="performance-page.html">Progress</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Profile + Toggle + notification(mobile only) -->
+          <div class="d-flex align-items-center gap-3">
+            <!-- Notification Dropdown -->
+            <div class="nav-item dropdown">
+              <button class="btn p-0 border-0 bg-transparent" type="button" id="notifDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="d-flex justify-content-center align-items-cente">
+                  <div class="notification-container">
+                    <i class="bi bi-bell fs-5 "></i>
+                  </div>
+
+                </div>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                <li class="dropdown-header">
+                  You have 4 new notifications
+                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li class="notification-item px-3">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                </li>
+                <li class="notification-item px-3">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                </li>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Profile Dropdown -->
+            <div class="dropdown">
+              <button class="btn p-0 border-0 bg-transparent" type="button" id="profileDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="/public/images/profile.jpg" alt="User" class="profile-img">
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <li>
+                  <h6 class="dropdown-header">Yatika Kumawat</h6>
+                </li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+
+
+            <!-- Toggle Button (only visible on mobile) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileOffcanvas" aria-controls="mobileOffcanvas" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- Header End -->
+      <!-- search bar -->
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="search-container">
+              <input type="text" class="form-control search-input search-box-text "
+                placeholder="Search  courses, assignments, or students">
+              <i class="fas fa-search search-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of search bar -->
+
+      <!-- parent container for popular courses, progress distribution,mentors and assignment table -->
+      <div class="container">
+
+        <!--Popular Courses Cards Section -->
+
+        <div class="container mt-4 ">
+
+          <h4 class="fw-bold">Popular Courses</h4>
+
+          <div class="row g-4 justify-content-center">
+            <!-- Card 1 -->
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card course-card">
+                <img src="/public/images/webd.avif" class="card-img-top" alt="Course Image"
+                  style="height: 160px; object-fit: cover;">
+                <div class="card-body p-0 ps-2">
+                  <h6 class="card-title fw-bold  mt-2 ">Web Development</h6>
+                  <p class="card-text text-muted text-muted-small mb-2">Dr. Chirag</p>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- Card 2 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card course-card">
+                <img src="/public/images/ai.jpg" class="card-img-top" alt="Course Image"
+                  style="height: 160px; object-fit: cover;">
+                <div class="card-body p-0 ps-2">
+                  <h6 class="card-title fw-bold  mt-2 ">Introduction to AI Ethics</h6>
+                  <p class="card-text text-muted text-muted-small mb-2">Mr. Tarun</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card course-card">
+                <img src="/public/images/creativeWork.jpg" class="card-img-top" alt="Course Image"
+                  style="height: 160px; object-fit: cover;">
+                <div class="card-body p-0 ps-2">
+                  <h6 class="card-title fw-bold  mt-2 ">Creative Writing Workshop</h6>
+                  <p class="card-text text-muted text-muted-small mb-2">Ms. Yatika</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card course-card">
+                <img src="/public/images/dataScience.avif" class="card-img-top" alt="Course Image"
+                  style="height: 160px; object-fit: cover;">
+                <div class="card-body p-0 ps-2">
+                  <h6 class="card-title fw-bold  mt-2 ">Advanced Data Analysis</h6>
+                  <p class="card-text text-muted text-muted-small mb-2">Mr. Kailash Dudi</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- Popular courses cards section end here-->
+
+        <!-- Progress Cards Section -->
+
+        <div class="container pt-3">
+          <h4 class="fw-bold mb-1 mt-4 m-0">Overview</h4>
+          <div class="row justify-content-center g-4 ">
+            <!-- Card 1: Overall Progress -->
+            <div class="col-sm-6 col-md-4">
+              <div class="card course-card text-center">
+                <div class="card-body d-flex justify-content-between">
+                  <h6 class="card-title mb-3">Overall Progress</h6>
+                  <!-- Knob SVG -->
+                  <svg class="progress-circle" width="80" height="80" viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="54" stroke="#e9ecef" stroke-width="12" fill="none" />
+                    <circle class="progress" cx="60" cy="60" r="54" stroke="#0d6efd" stroke-width="12" fill="none"
+                      stroke-dasharray="339.292" stroke-dashoffset="135.717" />
+                    <text x="60" y="68" text-anchor="middle" font-size="24" fill="#0d6efd" font-weight="700">60%</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Courses Completed -->
+            <div class="col-sm-6 col-md-4 col-lg-4">
+              <div class="card text-center course-card ">
+                <div class="card-body d-flex justify-content-between p-3">
+                  <h6 class="card-title mb-3">Courses Completed</h6>
+                  <!-- Knob SVG -->
+                  <svg class="progress-circle" width="80" height="80" viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="54" stroke="#e9ecef" stroke-width="12" fill="none" />
+                    <circle class="progress" cx="60" cy="60" r="54" stroke="#198754" stroke-width="12" fill="none"
+                      stroke-dasharray="339.292" stroke-dashoffset="67.858" />
+                    <text x="60" y="68" text-anchor="middle" font-size="24" fill="#198754" font-weight="700">80%</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Assignments Submitted -->
+            <div class="col-sm-6 col-md-4 col-lg-4">
+              <div class="card text-center course-card ">
+                <div class="card-body d-flex justify-content-between">
+                  <h6 class="card-title mb-3">Assignments Submitted</h6>
+                  <!-- Knob SVG -->
+                  <svg class="progress-circle" width="80" height="80" viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="54" stroke="#e9ecef" stroke-width="12" fill="none" />
+                    <circle class="progress" cx="60" cy="60" r="54" stroke="#dc3545" stroke-width="12" fill="none"
+                      stroke-dasharray="339.292" stroke-dashoffset="101.787" />
+                    <text x="60" y="68" text-anchor="middle" font-size="24" fill="#dc3545" font-weight="700">70%</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- overall progress distribution and mentors  -->
+        <div class="container py-4 mt-4">
+          <div class="row g-4 align-items-stretch ">
+            <div class="col-12 col-md-8 d-flex">
+              <div class="card p-4 course-card w-100" style="border-radius: 12px;">
+                <h2 class="h6 mb-3">Overall Progress Distribution</h2>
+                <p class="display-6 fw-bold">75%</p>
+                <div class="d-flex gap-2 mb-4">
+                  <span class="text-secondary">Current</span>
+                  <span class="text-success fw-medium">+10%</span>
+                </div>
+                <div class="d-flex flex-column gap-4">
+                  <!-- Progress Items -->
+                  <div class="d-flex flex-column flex-md-row align-items-md-center gap-2">
+                    <p class="mb-1 mb-md-0 text-muted small fw-bold course-label">Mathematics Fundamentals</p>
+                    <div class="progress flex-grow-1" style="height: 8px;">
+                      <div class="progress-bar" style="width: 60%; background-color: #C137EF;"></div>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column flex-md-row align-items-md-center gap-2">
+                    <p class="mb-1 mb-md-0 text-muted small fw-bold course-label">Science Explorations</p>
+                    <div class="progress flex-grow-1" style="height: 8px;">
+                      <div class="progress-bar" style="width: 80%; background-color: #34B13E;"></div>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column flex-md-row align-items-md-center gap-2">
+                    <p class="mb-1 mb-md-0 text-muted small fw-bold course-label">World History</p>
+                    <div class="progress flex-grow-1" style="height: 8px;">
+                      <div class="progress-bar" style="width: 50%; background-color: #F6383B;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mentors Section (Right) -->
+            <div class="col-12 col-md-4 d-flex">
+              <div class="card p-4 course-card w-100" style="border-radius: 12px;">
+                <h2 class="h6 fw-bold mb-4">Mentors</h2>
+                <div class="d-flex flex-column gap-3">
+                  <!-- Mentors -->
+                  <!-- Mentor-1 -->
+                  <div class="d-flex align-items-center course-card" style="border-radius: 12px;">
+                    <img src="/public/images/mentorone.avif" alt="Dr. Amelia Stone" class="rounded-circle me-3"
+                      width="56" height="56" style="object-fit: cover;">
+                    <div>
+                      <h6 class="mb-1 fw-semibold">Dr. Amelia Stone</h6>
+                      <p class="mb-0 text-muted small">Advance Data Analysis</p>
+                    </div>
+                  </div>
+                  <!-- Mentor-2 -->
+                  <div class="d-flex align-items-center course-card " style="border-radius: 12px;">
+                    <img src="/public/images/profile-pic.png" alt="Prof. Kailash Dudi" class="rounded-circle me-3"
+                      width="56" height="56">
+                    <div>
+                      <h6 class="mb-1 fw-semibold">Prof. Kailash Dudi</h6>
+                      <p class="mb-0 text-muted small">Web Development</p>
+                    </div>
+                  </div>
+                  <!-- Mentor-3 -->
+                  <div class="d-flex align-items-center course-card" style="border-radius: 12px;">
+                    <img src="/public/images/mentortwo.avif" alt="Dr. Olivia Reed" class="rounded-circle me-3"
+                      width="56" height="56" style="object-fit: cover;">
+                    <div>
+                      <h6 class="mb-1 fw-semibold">Dr. Olivia Reed</h6>
+                      <p class="mb-0 text-muted small">Machine Learning</p>
+                    </div>
+                  </div>
+                  <!-- Mentor-4 -->
+                  <div class="d-flex align-items-center course-card" style="border-radius: 12px;">
+                    <img src="/public/images/profile-pic.png" alt="Prof. Noah Bennett" class="rounded-circle me-3"
+                      width="56" height="56">
+                    <div>
+                      <h6 class="mb-1 fw-semibold">Prof. Noah Bennett</h6>
+                      <p class="mb-0 text-muted small">Full-stack</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assignments Table -->
+        <div class="container my-4">
+          <!-- heading for table -->
+          <h3 class="fw-bold mb-2">Assignments</h3>
+          <div class="table-responsive course-card" style="border-radius: 12px;">
+            <!-- use some custom css for rounded table without borders-->
+            <table class="table table-hover align-middle ">
+              <thead class="table-info py-4">
+                <tr>
+                  <th class="py-4" scope="col">Assignment</th>
+                  <th class="py-4" scope="col">Due Date</th>
+                  <th class="py-4" scope="col">Course</th>
+                  <th class="py-4" scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody class="table-group-divider">
+                <tr>
+                  <th class="py-4" scope="row">Math Quiz 1</th>
+                  <td class="py-4">2024-08-15</td>
+                  <td class="py-4">Mathematics Fundamentals</td>
+                  <td class="py-4">
+                    <span class="d-inline-block px-4 py-1 rounded-pill text-center course-card"
+                      style="background: rgba(52, 176, 62, 0.72); color: #121417; font-weight: 500; width: 80%;">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="py-4" scope="row">Science Project</th>
+                  <td class="py-4">2024-08-20</td>
+                  <td class="py-4">Science Explorations</td>
+                  <td class="py-4">
+                    <span class="d-inline-block px-4 py-1 rounded-pill text-center course-card"
+                      style="background: rgba(246, 56, 59, 0.75); color: #121417; font-weight: 500; width: 80%;">Pending</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="py-4" scope="row">History Essay</th>
+                  <td class="py-4">2024-08-25</td>
+                  <td class="py-4">World History</td>
+                  <td class="py-4"> <span class="d-inline-block px-4 py-1 rounded-pill text-center course-card"
+                      style="background: rgba(193, 55, 239, 0.82); color: #121417; font-weight: 500; width: 80%;">Ongoing</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

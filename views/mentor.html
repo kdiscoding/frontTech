@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- google icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../public/styles/style.css">
+  <link rel="stylesheet" href="../public/styles/mentor.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="body-wrapper">
+      <!-- Header Start -->
+      <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom">
+        <div class="container-fluid d-flex justify-content-between align-items-center w-100">
+
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-book h5 pt-2"></i>
+            <h5 class="mb-0 fw-bold d-none d-lg-block">tectr&#8734p</h5>
+          </div>
+
+          <ul class="navbar-nav flex-row gap-3 ms-auto me-2 d-none d-lg-flex">
+            <li class="nav-item"><a class="nav-link fw-semibold active" href="mentor.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="courses-page.html">Courses</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="performance.html">Progress</a></li>
+          </ul>
+
+          <!-- Offcanvas Menu -->
+          <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileOffcanvas"
+            aria-labelledby="mobileOffcanvasLabel" style="width: 50%;">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title fw-bold" id="mobileOffcanvasLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-column gap-2">
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="courses-page.html">Courses</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="performance-page.html">Progress</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Profile + Toggle + notification(mobile only) -->
+          <div class="d-flex align-items-center gap-3">
+            <!-- Notification Dropdown -->
+            <div class="nav-item dropdown">
+              <button class="btn p-0 border-0 bg-transparent" type="button" id="notifDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="d-flex justify-content-center align-items-cente">
+                  <div class="notification-container">
+                    <i class="bi bi-bell fs-5 "></i>
+                  </div>
+
+                </div>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                <li class="dropdown-header">
+                  You have 4 new notifications
+                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li class="notification-item px-3">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                </li>
+                <li class="notification-item px-3">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                </li>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Profile Dropdown -->
+            <div class="dropdown">
+              <button class="btn p-0 border-0 bg-transparent" type="button" id="profileDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="/public/images/profile.jpg" alt="User" class="profile-img">
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <li>
+                  <h6 class="dropdown-header">Yatika Kumawat</h6>
+                </li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+
+
+            <!-- Toggle Button (only visible on mobile) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileOffcanvas" aria-controls="mobileOffcanvas" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Main Content -->
+          <div class="col-md-8 ">
+            <!-- Profile Section -->
+            <section class="profile-card course-card">
+              <div class="row">
+                <div class="col-md-3">
+                  <img src="/public/images/mentorPro.avif" alt="Isabella Montgomery" class="profile-image">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="mb-1">Isabella Montgomery</h5>
+                  <p class="text-muted mb-2 small">Senior Software Developer</p>
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="row mt-1">
+                    <div class="col-12">
+                      <div class="stat-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>8+ years of experience</span>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="stat-item">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>232 lessons conducted</span>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <span>200+ Students</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row align-items-center mb-0">
+                <div class="col ">
+                  <p class="mt-1 text-muted text-start">
+                    Experienced and results-driven Senior Software Engineer with over 8 years of expertise in
+                    designing,
+                    developing, and deploying scalable software solutions. Passionate about mentoring developers,
+                    optimizing
+                    system performance, and building reliable, user-focused applications.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Students Section -->
+            <section class="students-section">
+              <div class="row mb-3">
+                <div class="col">
+                  <h3 class="section-title">Students</h3>
+                </div>
+                <div class="col-auto">
+                  <a href="#" class="view-all-btn">View all</a>
+                </div>
+
+              </div>
+
+              <div class="students-grid">
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-purple" style="width: 75%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-green" style="width: 90%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-red" style="width: 25%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-red" style="width: 30%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-green" style="width: 85%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-red" style="width: 40%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-green" style="width: 95%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-purple" style="width: 60%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-purple" style="width: 70%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-green" style="width: 88%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-purple" style="width: 65%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+
+                <div class="student-card">
+                  <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=60&h=60&fit=crop&crop=face"
+                    alt="Roberto Jessy" class="student-avatar">
+                  <div class="student-info">
+                    <h6>Roberto Jessy</h6>
+                    <div class="student-id">ID: 25546</div>
+                    <div class="progress-bar progress-purple" style="width: 80%;"></div>
+                  </div>
+                  <a href="#" class="view-btn">view</a>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="col-lg-4">
+            <div class="sidebar">
+              <div class="profile-mini">
+                <h5>Profile</h5>
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face"
+                  alt="John Ethan">
+                <h6 class="mt-2">John Ethan</h6>
+                <p class="text-muted small">UI/UX Designer/Developer</p>
+              </div>
+
+              <div class="stats-row">
+                <div class="stat-box">
+                  <span class="stat-number">02</span>
+                  <span class="stat-label">Rewards</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">05</span>
+                  <span class="stat-label">Goals in month</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">4.4</span>
+                  <span class="stat-label">Ratings</span>
+                </div>
+              </div>
+
+              <div class="courses-info">
+                <div class="course-box">
+                  <div class="stat-number">3</div>
+                  <div class="stat-label">Courses Completed</div>
+                </div>
+                <div class="course-box">
+                  <div class="stat-number">8</div>
+                  <div class="stat-label">Courses Enrolled</div>
+                </div>
+              </div>
+
+              <section class="performance-section">
+                <h5>Performance</h5>
+                <div class="chart-container">
+                  <div class="chart-bar bar-1"></div>
+                  <div class="chart-bar bar-2"></div>
+                  <div class="chart-bar bar-3"></div>
+                </div>
+                <div class="chart-labels">
+                  <span>1-10 May</span>
+                  <span>11-20 May</span>
+                  <span>21-30 May</span>
+                </div>
+              </section>
+
+              <div class="progress-overall">
+                <h6>Over all Progress</h6>
+                <div class="progress-bar-container">
+                  <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                  <span>65% Completed</span>
+                  <span>100%</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
